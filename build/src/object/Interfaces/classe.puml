@@ -1,0 +1,30 @@
+@startuml
+interface Pet {
+    walk(): void
+    eat(): void
+    sleep(): void
+}
+
+class Animal {
+    - name: string
+    + color: string
+    # race: string
+    + age: integer
+    constructor(name, color, race, age)
+    + walk(): void
+    + eat(): void
+    + sleep(): void
+}
+
+class Dog {
+    bark(): void
+}
+
+class Cat {
+    meow(): void
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+Pet <|.. Animal
+@enduml
